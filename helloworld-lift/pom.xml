@@ -1,0 +1,75 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>io.escalante.quickstarts</groupId>
+   <artifactId>escalante-helloworld-lift</artifactId>
+   <version>0.1.0-SNAPSHOT</version>
+   <packaging>war</packaging>
+   <name>Escalante Quickstarts: Helloworld Lift</name>
+   <description>Escalante Quickstarts: Helloworld Lift</description>
+   <url>http://escalante.io</url>
+
+   <properties>
+      <!-- Explicitly declaring the source encoding
+           eliminates the following message:
+
+           [WARNING] Using platform encoding (UTF-8 actually) to copy
+           filtered resources, i.e. build is platform dependent!
+      -->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <version.scala>2.9.1</version.scala>
+   </properties>
+
+   <dependencies>
+      <dependency>
+         <groupId>net.liftweb</groupId>
+         <artifactId>lift-mapper_${version.scala}</artifactId>
+         <version>2.4</version>
+         <scope>provided</scope>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <!-- Set the name of the war, used as the context root
+           when the app is deployed -->
+      <finalName>${artifactId}</finalName>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.1.1</version>
+            <configuration>
+               <!-- Java EE 6 doesn't require web.xml,
+                    Maven needs to catch up! -->
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+         </plugin>
+
+         <!-- JBoss AS plugin to deploy war -->
+         <plugin>
+            <groupId>org.jboss.as.plugins</groupId>
+            <artifactId>jboss-as-maven-plugin</artifactId>
+            <version>7.1.0.Final</version>
+         </plugin>
+
+         <plugin>
+            <groupId>net.alchim31.maven</groupId>
+            <artifactId>scala-maven-plugin</artifactId>
+            <version>3.0.2</version>
+            <executions>
+               <execution>
+                  <goals>
+                     <goal>compile</goal>
+                     <goal>testCompile</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <scalaVersion>${version.scala}</scalaVersion>
+            </configuration>
+         </plugin>
+
+      </plugins>
+   </build>
+</project>
