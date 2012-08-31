@@ -1,17 +1,15 @@
-persistence-lift: Persistence Lift Example
-========================================
+#persistence-lift: Persistence Lift Example
+
 Author: Galder Zamarreño
 
-What is it?
------------
+##What is it?
 
 This example demonstrates the use of *Lift* ORM model which interacts with
 Escalante's example datasource. This quickstart uses an older Scala version
 (2.8) on purpouse to demonstrate that multiple versions of Scala are supported
 in Escalante.
 
-System requirements
--------------------
+##System requirements
 
 The example can be deployed using Maven from the command line or from Eclipse
 using JBoss Tools or JBoss Developer Studio.
@@ -32,17 +30,35 @@ Eclipse, or JBoss Developer Studio, instance, so if you want to develop in
 multiple Scala versions, you'll need to maintain separate Eclipse, or JBoss
 Developer Studio instaces.
 
-Deploying the application
--------------------------
+## Deploying the application
 
-To deploy the application to Escalante using Maven, start the Escalante and type
+### JBoss Developer Studio
 
-    mvn package jboss-as:deploy
+To deploy the application to Escalante using JBoss Developer Studio:
 
-The application is deployed to <http://localhost:8080/escalante-persistence-lift>.
+1. Import project into workspace
+2. Go to `Servers` tab and click on `new server wizard`
+3. Select `JBoss AS 7.1` and change `Server name` to: **Escalante**
+4. Click `Next` and select the home directory of Escalante
+5. Click `Next` twice and add `escalante-helloworld-lift` application to server
+6. Click `Finish` in the wizard
+7. Right-click on the Escalante server and click `Start`
+8. Check the the application is deployed to
+<http://localhost:8080/escalante-persistence-lift>
 
-Using the application
----------------------
+### Maven
+
+To deploy the application to Escalante using Maven:
+
+1. Start the Escalante from the command line
+2. From the root of this maven project, type:
+
+    mvn clean package jboss-as:deploy
+
+3. Check the the application is deployed to
+<http://localhost:8080/escalante-persistence-lift>.
+
+## Using the application
 
 1. To use the application, click on `Sign Up` and fill in the details.
 2. Once signed up, change your password to `escalante`
