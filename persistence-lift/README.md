@@ -40,7 +40,7 @@ To deploy the application to Escalante using JBoss Developer Studio:
 2. Go to `Servers` tab and click on `new server wizard`
 3. Select `JBoss AS 7.1` and change `Server name` to: **Escalante**
 4. Click `Next` and select the home directory of Escalante
-5. Click `Next` twice and add `escalante-helloworld-lift` application to server
+5. Click `Next` twice and add `escalante-persistence-lift` application to server
 6. Click `Finish` in the wizard
 7. Right-click on the Escalante server and click `Start`
 8. Check the the application is deployed to
