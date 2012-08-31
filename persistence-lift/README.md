@@ -52,9 +52,7 @@ To deploy the application to Escalante using Maven:
 
 1. Start the Escalante from the command line
 2. From the root of this maven project, type:
-
-    mvn clean package jboss-as:deploy
-
+`mvn clean package jboss-as:deploy`
 3. Check the the application is deployed to
 <http://localhost:8080/escalante-persistence-lift>.
 
