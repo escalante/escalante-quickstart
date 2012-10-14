@@ -1,0 +1,90 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.escalante.quickstarts</groupId>
+	<artifactId>escalante-helloworld-scaladin</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Escalante Quickstarts: Helloworld Scaladin</name>
+	<description>Escalante Quickstarts: Helloworld Scaladin</description>
+	<url>http://escalante.io</url>
+
+	<properties>
+		<!-- Explicitly declaring the source encoding eliminates the following 
+			message: [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
+			resources, i.e. build is platform dependent! -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.scala>2.9.1</version.scala>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin</artifactId>
+			<version>6.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>scaladin</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${version.scala}</version>
+		</dependency>
+		<!-- JBoss 7 is a bit eager when loading classes, which can produce harmless 
+			errors in the log. See http://dev.vaadin.com/ticket/7822 for discussion. -->
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-application-server-class-loader-workaround</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<!-- Set the name of the war, used as the context root when the app is 
+			deployed -->
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+			</plugin>
+
+			<!-- JBoss AS plugin to deploy war -->
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.1.0.Final</version>
+			</plugin>
+
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>3.0.2</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<scalaVersion>${version.scala}</scalaVersion>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
