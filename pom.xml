@@ -40,25 +40,51 @@
         </license>
     </licenses>
 
-    <profiles>
-        <profile>
-            <!-- All default quickstarts -->
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-                <property>
-                    <name>default</name>
-                    <value>!disabled</value>
-                </property>
-            </activation>
-            <modules>
-                <!-- All the modules that require nothing but Escalante -->
-                <module>helloworld-lift</module>
-                <module>persistence-lift</module>
-                <module>standard-helloworld-lift</module>
-            </modules>
-        </profile>
-    </profiles>
+   <profiles>
+      <profile>
+         <!-- All default quickstarts -->
+         <id>default</id>
+         <activation>
+            <activeByDefault>true</activeByDefault>
+            <property>
+               <name>default</name>
+               <value>!disabled</value>
+            </property>
+         </activation>
+         <modules>
+            <!--
+            Uncomment to enable building quickstarts from root.
+            The reason for leaving them uncommented is because if
+            they're defined, running with -Popenshift makes them build,
+            and this is problematic for OpenShift's default behaivour of
+            expecting a single app (i.e. war) in a project.
+            -->
+
+            <!--<module>helloworld-lift</module>-->
+            <!--<module>persistence-lift</module>-->
+            <!--<module>standard-helloworld-lift</module>-->
+         </modules>
+      </profile>
+      <profile>
+         <!--
+         When built in OpenShift the 'openshift' profile will be used when
+         invoking mvn. Use this profile for any OpenShift specific
+         customization your app will need. By default that is to put the
+         resulting archive into the 'deployments' folder.
+
+         http://maven.apache.org/guides/mini/guide-building-for-different-environments.html
+         -->
+         <id>openshift</id>
+         <modules>
+            <!-- Select just one module! -->
+            <module>helloworld-lift</module>
+            <!--
+            <module>persistence-lift</module>
+            <module>standard-helloworld-lift</module>
+            -->
+         </modules>
+      </profile>
+   </profiles>
 
     <scm>
         <connection>scm:git://github.com/escalante/escalante-quickstart.git</connection>
