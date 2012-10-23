@@ -35,6 +35,13 @@
 			<artifactId>scala-library</artifactId>
 			<version>${version.scala}</version>
 		</dependency>
+		<!-- JBoss 7 is a bit eager when loading classes, which can produce harmless 
+			errors in the log. See http://dev.vaadin.com/ticket/7822 for discussion. -->
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>vaadin-application-server-class-loader-workaround</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
