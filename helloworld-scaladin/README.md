@@ -5,6 +5,7 @@ Author: Risto Yrjänä / Vaadin
 ## What is it?
 
 This example demonstrates the use of the *Vaadin* web framework with the *Scaladin* add-on in Escalante.
+The war file contains all the required dependencies: Vaadin, Scaladin and the Scala library.
 
 ## System requirements
 
