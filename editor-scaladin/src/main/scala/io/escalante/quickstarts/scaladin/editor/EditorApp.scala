@@ -2,7 +2,6 @@ package io.escalante.quickstarts.scaladin.editor
 
 import scala.reflect.BeanProperty
 import scala.util.Random
-
 import vaadin.scala._
 
 /**
