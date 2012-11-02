@@ -6,7 +6,8 @@ import scala.util.Random
 import vaadin.scala._
 
 /**
- * Example app with a list of beans, a table to show the beans and a form to edit them
+ * Example app with a list of beans, a table to show the beans and a form to edit them.
+ * Since Vaadin is datasource-agnostic, anything that returns a collection of beans can be used.
  */
 class Editor extends Application("Escalante Scaladin Quickstart: registration editor") {
 
@@ -51,7 +52,11 @@ class Editor extends Application("Escalante Scaladin Quickstart: registration ed
     def showForm(): Unit = {
       form.item = new BeanItem(Registration())
       form.visibleItemProperties = Seq("realName", "username", "password")
+      form.p.setValidationVisible(false)
+
+      //here we add a field to the form for something that doesn't exist in the bean itself 
       form.addField(Option("confirmation"), form.formFieldFactory.flatMap(_.createField(FormFieldIngredients(form.item.get, "confirmation", form))))
+
       replaceComponent(tableLayout, form)
       alignment(form -> Alignment.MiddleCenter)
     }
@@ -85,9 +90,7 @@ class Editor extends Application("Escalante Scaladin Quickstart: registration ed
             else Invalid(List("Passwords must match")))
         })
 
-      case otherIngredient => {
-        DefaultFieldFactory.createField(otherIngredient)
-      }
+      case otherIngredient => DefaultFieldFactory.createField(otherIngredient)
     }
 
     field.foreach(_.required = true)
