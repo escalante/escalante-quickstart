@@ -52,6 +52,8 @@
 	</repositories>
 
 	<build>
+      <!-- Defined so that JBDS/Eclipse can add them as src directory -->
+      <sourceDirectory>src/main/scala</sourceDirectory>
 		<!-- Set the name of the war, used as the context root when the app is 
 			deployed -->
 		<finalName>${project.artifactId}</finalName>
