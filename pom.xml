@@ -41,30 +41,7 @@
     </licenses>
 
    <profiles>
-      <profile>
-         <!-- All default quickstarts -->
-         <id>default</id>
-         <activation>
-            <activeByDefault>true</activeByDefault>
-            <property>
-               <name>default</name>
-               <value>!disabled</value>
-            </property>
-         </activation>
-         <modules>
-            <!--
-            Uncomment to enable building quickstarts from root.
-            The reason for leaving them uncommented is because if
-            they're defined, running with -Popenshift makes them build,
-            and this is problematic for OpenShift's default behaivour of
-            expecting a single app (i.e. war) in a project.
-            -->
-
-            <!--<module>helloworld-lift</module>-->
-            <!--<module>persistence-lift</module>-->
-            <!--<module>standard-helloworld-lift</module>-->
-         </modules>
-      </profile>
+      <!-- DO NOT CHANGE THE *ORDER* IN WHICH THESE PROFILES ARE DEFINED! -->
       <profile>
          <!--
          When built in OpenShift the 'openshift' profile will be used when
@@ -81,7 +58,21 @@
             <!--
             <module>persistence-lift</module>
             <module>standard-helloworld-lift</module>
+            <module>helloworld-scaladin</module>
             -->
+         </modules>
+      </profile>
+      <profile>
+         <!-- All default quickstarts -->
+         <id>default</id>
+         <activation>
+            <activeByDefault>true</activeByDefault>
+         </activation>
+         <modules>
+            <module>helloworld-lift</module>
+            <module>persistence-lift</module>
+            <module>standard-helloworld-lift</module>
+            <module>helloworld-scaladin</module>
          </modules>
       </profile>
    </profiles>

@@ -10,5 +10,6 @@
 .cache
 # ignore Maven generated files
 target
+deployments
 # log files
 *.log
