@@ -73,6 +73,7 @@
             <module>persistence-lift</module>
             <module>standard-helloworld-lift</module>
             <module>helloworld-scaladin</module>
+            <module>editor-scaladin</module>
          </modules>
       </profile>
    </profiles>
