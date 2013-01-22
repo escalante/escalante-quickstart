@@ -26,7 +26,7 @@
     </parent>
     <groupId>io.escalante.quickstarts</groupId>
     <artifactId>escalante-quickstarts</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Escalante Quickstarts Parent</name>
     <description>Escalante Parent</description>

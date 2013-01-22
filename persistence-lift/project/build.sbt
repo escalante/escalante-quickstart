@@ -6,4 +6,4 @@ resolvers ++= Seq(
    "Project Odd repository" at "http://repository-projectodd.forge.cloudbees.com/upstream/"
 )
 
-addSbtPlugin("io.escalante.sbt" % "sbt-escalante" % "0.1.0-+")
+addSbtPlugin("io.escalante.sbt" % "sbt-escalante" % "0.1.0-SNAPSHOT")

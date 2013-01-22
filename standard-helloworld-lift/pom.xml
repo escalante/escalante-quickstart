@@ -21,7 +21,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>io.escalante.quickstarts</groupId>
    <artifactId>standard-helloworld-lift</artifactId>
-   <version>1.0-SNAPSHOT</version>
+   <version>0.2.0-SNAPSHOT</version>
    <packaging>war</packaging>
    <name>Escalante Quickstarts: Standard HelloWorld Lift</name>
    <description>Escalante Quickstarts: Standard HelloWorld Lift</description>
