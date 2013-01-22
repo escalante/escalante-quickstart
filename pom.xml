@@ -71,6 +71,7 @@
          <modules>
             <module>helloworld-lift</module>
             <module>persistence-lift</module>
+            <module>library-lift-jpa</module>
             <module>standard-helloworld-lift</module>
             <module>helloworld-scaladin</module>
             <module>editor-scaladin</module>

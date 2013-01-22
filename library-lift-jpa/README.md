@@ -1,11 +1,20 @@
-# helloworld-lift: Hello World Lift Example
+# library-lift-jpa: Library Lift JPA Example
 
 Author: Galder Zamarreño
 
 ## What is it?
 
-This example demonstrates the use of *Lift* Scala web framework in Escalante
-using the latest Scala version available.
+This example demonstrates the use of [*Lift*](http://liftweb.net/) Scala web
+framework together with [JPA]
+(http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+in order to maintain a virtual library.
+
+The way Lift integrates with JPA is by deploying a persistence unit with an
+[EntityManagerFactory](http://docs.oracle.com/javaee/6/api/javax/persistence/EntityManagerFactory.html)
+which is bound to [JNDI](http://www.oracle.com/technetwork/java/jndi/index.html)
+, and with the application looking it up.
+
+The library keeps track of books and their corresponding authors.
 
 ## System requirements
 
@@ -34,7 +43,7 @@ To deploy the application to Escalante using JBoss Developer Studio:
 6. Click `Finish` in the wizard
 7. Right-click on the Escalante server and click `Start`
 8. Check the the application is deployed to
-<http://localhost:8080/escalante-helloworld-lift>
+<http://localhost:8080/escalante-library-lift-jpa>
 
 ### Maven
 
@@ -46,7 +55,7 @@ To deploy the application to Escalante using Maven:
 3. From the root of this maven project, type:
 `mvn clean package jboss-as:deploy`
 4. Check the the application is deployed to
-<http://localhost:8080/escalante-helloworld-lift>
+<http://localhost:8080/escalante-library-lift-jpa>
 
 ### SBT
 
@@ -57,7 +66,14 @@ To deploy the application to Escalante using SBT (Simple Build Tool):
 3. Once SBT console loaded, execute:
 `> escalante-run`
 4. Check the the application is deployed to
-<http://localhost:8080/escalante-helloworld-lift>
+<http://localhost:8080/escalante-library-lift-jpa>
+
+## Using the application
+
+1. To use the application, click on `JPA: Authors: Add` and fill in the details.
+2. Click on `Add more` to add a book for the author entered in previous step.
+3. Give the book a title, i.e. `Escalante In Action` ;), and click `Submit`
+4. You should now see a book assigned to the entered author.
 
 ## Using different Scala and/or Lift versions
 

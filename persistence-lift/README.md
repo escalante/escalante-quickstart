@@ -69,17 +69,19 @@ and new password
 
 This example can be tailored for other Scala versions by changing the required
 Scala version in either the `pom.xml` or `build.sbt` file, and installing the
-correct Scala IDE version. If using Maven or JBDS, you'll also need to adjust
-the Scala version in the META-INF/escalante.yml descriptor. For SBT users,
-this last step is not necessary because the Escalante SBT plugin generates
-this descriptor file from the metadata information in `build.sbt` file.
+correct Scala IDE version. Remember to also need to adjust the Scala version
+in the `META-INF/escalante.yml` descriptor.
 
 This example can also be tailored for other Lift versions by changing the
 required Lift version in either the `pom.xml` or `build.sbt` file.
-If using Maven or JBDS, you'll also need to adjust the Lift version in the
-`META-INF/escalante.yml descriptor`. For SBT users, this last step is not
-necessary because the Escalante SBT plugin generates this descriptor file
-from the metadata information in `build.sbt` file.
+Remember to also need to adjust the Lift version in the
+`META-INF/escalante.yml` descriptor.
+
+If you're only using SBT as build system, remember that there's no need to
+maintain a `META-INF/escalante.yml` separately, since the Escalante SBT
+plugin will generate it for you. Since these quickstarts are tailored for
+both Maven and SBT, the file is already present, in which case the generated
+descriptor is ignored, and the one under the source tree is used.
 
 Note that some Scala versions might be more recent than Lift releases, so
 there might not be Lift dependencies online for those Scala versions. Bear
