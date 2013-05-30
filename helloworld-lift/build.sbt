@@ -2,12 +2,11 @@ import sbt._
 import sbt.Keys._
 import io.escalante.sbt.EscalantePlugin._
 import io.escalante.sbt.EscalantePlugin.EscalanteKeys._
+escalanteSettings
 
 version := "0.2.0"
 
 scalaVersion := "2.9.1"
-
-escalanteSettings
 
 liftWarName in liftWar := "escalante-helloworld-lift.war"
 
