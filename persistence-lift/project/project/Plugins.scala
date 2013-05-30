@@ -9,5 +9,5 @@ object Plugins extends Build {
       "Project Odd repository" at "http://repository-projectodd.forge.cloudbees.com/upstream/")
   ).dependsOn(sbtEscalante)
 
-  lazy val sbtEscalante = uri("git://github.com/escalante/sbt-escalante.git#0.1.2")
+  lazy val sbtEscalante = uri("git://github.com/escalante/sbt-escalante.git#0.2.0")
 }

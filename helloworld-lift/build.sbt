@@ -6,11 +6,11 @@ escalanteSettings
 
 version := "0.2.0"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.10.1"
 
 liftWarName in liftWar := "escalante-helloworld-lift.war"
 
-liftVersion in liftWar := Some("2.4")
+liftVersion in liftWar := Some("2.5-RC4")
 
 libraryDependencies <+= (liftVersion in liftWar) { lv: Option[String] =>
   "net.liftweb" %% "lift-webkit" % lv.get % "provided"
