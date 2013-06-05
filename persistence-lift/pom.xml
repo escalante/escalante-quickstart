@@ -21,7 +21,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>io.escalante.quickstarts</groupId>
    <artifactId>escalante-persistence-lift</artifactId>
-   <version>0.2.0</version>
+   <version>0.3.0</version>
    <packaging>war</packaging>
    <name>Escalante Quickstarts: Persistence Lift</name>
    <description>Escalante Quickstarts: Persistence Lift</description>

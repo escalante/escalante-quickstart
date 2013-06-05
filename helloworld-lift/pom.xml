@@ -21,7 +21,7 @@
    <modelVersion>4.0.0</modelVersion>
    <groupId>io.escalante.quickstarts</groupId>
    <artifactId>escalante-helloworld-lift</artifactId>
-   <version>0.2.0</version>
+   <version>0.3.0</version>
    <packaging>war</packaging>
    <name>Escalante Quickstarts: Helloworld Lift</name>
    <description>Escalante Quickstarts: Helloworld Lift</description>
@@ -42,7 +42,7 @@
       <dependency>
          <groupId>net.liftweb</groupId>
          <artifactId>lift-webkit_${version.scala}</artifactId>
-         <version>2.4</version>
+         <version>2.5-RC4</version>
          <scope>provided</scope>
       </dependency>
    </dependencies>
